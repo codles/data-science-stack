@@ -19,7 +19,6 @@ RUN julia -e 'Pkg.init()' && \
     julia -e 'using HDF5' && \
     julia -e 'using PyPlot' && \
     julia -e 'using Plots' && \
-    julia -e 'using Gadfly' && \
     julia -e 'using RDatasets' && \
     julia -e 'using IJulia' && \
     # move kernelspec out of home \
