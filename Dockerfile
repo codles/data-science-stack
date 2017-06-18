@@ -20,8 +20,4 @@ RUN julia -e 'Pkg.init()' && \
     julia -e 'using PyPlot' && \
     julia -e 'using Plots' && \
     julia -e 'using RDatasets' && \
-    julia -e 'using IJulia' && \
-    # move kernelspec out of home \
-    mv $HOME/.local/share/jupyter/kernels/julia* $CONDA_DIR/share/jupyter/kernels/ && \
-    chmod -R go+rx $CONDA_DIR/share/jupyter && \
-    rm -rf $HOME/.local
+    julia -e 'using IJulia'
