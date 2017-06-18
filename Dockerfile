@@ -6,6 +6,8 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     xz-utils
 
+RUN ln -s /bin/tar /bin/gtar 
+
 USER $NB_USER
     
 RUN julia -e 'Pkg.init()' && \
