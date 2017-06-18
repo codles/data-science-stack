@@ -4,10 +4,10 @@ USER root
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    xz-utils \      # to install R packages
-    lsb \   # for GR
-    gcc && apt-get clean && \
+    xz-utils \
+    lsb && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+        
 
 RUN ln -s /bin/tar /bin/gtar 
 
