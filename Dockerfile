@@ -19,10 +19,14 @@ RUN julia -e 'Pkg.init()' && \
     julia -e 'Pkg.add("GR")' && \
     julia -e 'Pkg.add("Plots")' && \
     julia -e 'Pkg.add("RDatasets")' && \
+    julia -e 'Pkg.add("DSP")' && \
+    julia -e 'Pkg.clone("https://github.com/antholzer/CompressedSensing.jl.git")' && \
     julia -e 'Pkg.add("IJulia")' && \
     # Precompile Julia packages \
     julia -e 'using HDF5' && \
     julia -e 'using GR' && \
     julia -e 'using Plots' && \
     julia -e 'using RDatasets' && \
+    julia -e 'using DSP' && \
+    julia -e 'using CompressedSensing' && \
     julia -e 'using IJulia'
