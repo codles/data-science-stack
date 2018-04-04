@@ -18,6 +18,7 @@ RUN julia -e 'Pkg.init()' && \
     julia -e 'Pkg.add("HDF5")' && \
     julia -e 'Pkg.add("GR")' && \
     julia -e 'Pkg.add("Plots")' && \
+    julia -e 'Pkg.add("Interact")' && \
     julia -e 'Pkg.add("RDatasets")' && \
     julia -e 'Pkg.add("DSP")' && \
     julia -e 'Pkg.clone("https://github.com/antholzer/CompressedSensing.jl.git")' && \
@@ -26,6 +27,7 @@ RUN julia -e 'Pkg.init()' && \
     julia -e 'using HDF5' && \
     julia -e 'using GR' && \
     julia -e 'using Plots' && \
+    julia -e 'using Interact' && \
     julia -e 'using RDatasets' && \
     julia -e 'using DSP' && \
     julia -e 'using CompressedSensing' && \
