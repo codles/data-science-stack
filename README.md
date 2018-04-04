@@ -3,6 +3,6 @@ Customised docker image for data science based on [Opinionated stacks: data scie
 
 ## Run
 `docker run -it --rm -p 8888:8888 codles/data-science-stack`  
-or
+or  
 `docker run -it -v $HOME:/home/jovyan/mirrored --rm -p 8888:8888 codles/data-science-stack start.sh jupyter lab`  
 
