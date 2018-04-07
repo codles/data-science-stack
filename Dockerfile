@@ -21,6 +21,7 @@ RUN julia -e 'Pkg.init()' && \
     julia -e 'Pkg.add("Interact")' && \
     julia -e 'Pkg.add("RDatasets")' && \
     julia -e 'Pkg.add("DSP")' && \
+    julia -e 'Pkg.add("BenchmarkTools")' && \
     julia -e 'Pkg.clone("https://github.com/antholzer/CompressedSensing.jl.git")' && \
     julia -e 'Pkg.add("IJulia")' && \
     # Precompile Julia packages \
@@ -30,5 +31,6 @@ RUN julia -e 'Pkg.init()' && \
     julia -e 'using Interact' && \
     julia -e 'using RDatasets' && \
     julia -e 'using DSP' && \
+    julia -e 'using BenchmarkTools' && \
     julia -e 'using CompressedSensing' && \
     julia -e 'using IJulia'
