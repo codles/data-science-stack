@@ -8,8 +8,8 @@ RUN apt-get update && \
     lsb && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
     
-RUN conda create -y -n py27 python=2.7 anaconda && \
-    source activate py27 && \
+RUN conda create -y -n py27 python=2.7 anaconda
+RUN source activate py27 && \
     python -m ipykernel install --user --name py27 --display-name "Python 2.7"    
 
 RUN ln -s /bin/tar /bin/gtar 
