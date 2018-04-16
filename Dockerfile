@@ -10,6 +10,7 @@ RUN apt-get update && \
     
 RUN conda create -y -n py27 python=2.7 anaconda
 RUN /bin/bash -c "source activate py27 && \
+    conda instal -y jupyter && \
     python -m ipykernel install --user --name py27 --display-name "Python 2.7"    "
 
 RUN ln -s /bin/tar /bin/gtar 
