@@ -9,13 +9,14 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
     
 RUN conda create -y -n py27 python=2.7 anaconda
-RUN /bin/bash -c "source activate py27 && \
-    conda install -y jupyter && \
-    python -m ipykernel install --user --name py27 --display-name "Python 2.7"    "
 
 RUN ln -s /bin/tar /bin/gtar 
 
 USER $NB_USER
+
+RUN /bin/bash -c "source activate py27 && \
+    conda install -y jupyter && \
+    python -m ipykernel install --user --name py27 --display-name "Python 2.7"    "
     
 RUN julia -e 'Pkg.init()' && \
     julia -e 'Pkg.update()' && \
