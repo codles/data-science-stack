@@ -27,6 +27,7 @@ RUN julia -e 'Pkg.init()' && \
     julia -e 'Pkg.add("RDatasets")' && \
     julia -e 'Pkg.add("DSP")' && \
     julia -e 'Pkg.add("BenchmarkTools")' && \
+    julia -e 'Pkg.add("PlotlyJS")' && \
     julia -e 'Pkg.add("SampledSignals")' && \
     julia -e 'Pkg.add("IJulia")' && \
     # Precompile Julia packages \
@@ -38,4 +39,5 @@ RUN julia -e 'Pkg.init()' && \
     julia -e 'using DSP' && \
     julia -e 'using BenchmarkTools' && \
     julia -e 'using SampledSignals' && \
+    julia -e 'using PlotlyJS' && \
     julia -e 'using IJulia'
