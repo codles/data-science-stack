@@ -18,26 +18,26 @@ RUN /bin/bash -c "source activate py27 && \
     conda install -y jupyter && \
     python -m ipykernel install --user --name py27 --display-name "Python 2.7"    "
     
-RUN julia -e 'Pkg.init()' && \
-    julia -e 'Pkg.update()' && \
-    julia -e 'Pkg.add("HDF5")' && \
-    julia -e 'Pkg.add("GR")' && \
-    julia -e 'Pkg.add("Plots")' && \
-    julia -e 'Pkg.add("Interact")' && \
-    julia -e 'Pkg.add("RDatasets")' && \
-    julia -e 'Pkg.add("DSP")' && \
-    julia -e 'Pkg.add("BenchmarkTools")' && \
-    julia -e 'Pkg.add("PlotlyJS")' && \
-    julia -e 'Pkg.add("SampledSignals")' && \
-    julia -e 'Pkg.add("IJulia")' && \
+RUN julia -e 'import Pkg; Pkg.init()' && \
+    julia -e 'import Pkg; Pkg.update()' && \
+    julia -e 'import Pkg; Pkg.add("HDF5")' && \
+    julia -e 'import Pkg; Pkg.add("GR")' && \
+    julia -e 'import Pkg; Pkg.add("Plots")' && \
+    julia -e 'import Pkg; Pkg.add("Interact")' && \
+    julia -e 'import Pkg; Pkg.add("RDatasets")' && \
+    julia -e 'import Pkg; Pkg.add("DSP")' && \
+    julia -e 'import Pkg; Pkg.add("BenchmarkTools")' && \
+    julia -e 'import Pkg; Pkg.add("PlotlyJS")' && \
+    julia -e 'import Pkg; Pkg.add("SampledSignals")' && \
+    julia -e 'import Pkg; Pkg.add("IJulia")' && \
     # Precompile Julia packages \
-    julia -e 'using HDF5' && \
-    julia -e 'using GR' && \
-    julia -e 'using Plots' && \
-    julia -e 'using Interact' && \
-    julia -e 'using RDatasets' && \
-    julia -e 'using DSP' && \
-    julia -e 'using BenchmarkTools' && \
-    julia -e 'using SampledSignals' && \
-    julia -e 'using PlotlyJS' && \
-    julia -e 'using IJulia'
+    julia -e 'import Pkg; using HDF5' && \
+    julia -e 'import Pkg; using GR' && \
+    julia -e 'import Pkg; using Plots' && \
+    julia -e 'import Pkg; using Interact' && \
+    julia -e 'import Pkg; using RDatasets' && \
+    julia -e 'import Pkg; using DSP' && \
+    julia -e 'import Pkg; using BenchmarkTools' && \
+    julia -e 'import Pkg; using SampledSignals' && \
+    julia -e 'import Pkg; using PlotlyJS' && \
+    julia -e 'import Pkg; using IJulia'
