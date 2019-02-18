@@ -18,8 +18,7 @@ RUN /bin/bash -c "source activate py27 && \
     conda install -y jupyter && \
     python -m ipykernel install --user --name py27 --display-name "Python 2.7"    "
     
-RUN julia -e 'import Pkg; Pkg.init()' && \
-    julia -e 'import Pkg; Pkg.update()' && \
+RUN julia -e 'import Pkg; Pkg.update()' && \
     julia -e 'import Pkg; Pkg.add("HDF5")' && \
     julia -e 'import Pkg; Pkg.add("GR")' && \
     julia -e 'import Pkg; Pkg.add("Plots")' && \
