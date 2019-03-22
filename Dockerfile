@@ -17,7 +17,9 @@ RUN conda create -y -n py27 python=2.7 anaconda
 RUN /bin/bash -c "source activate py27 && \
     conda install -y jupyter && \
     python -m ipykernel install --user --name py27 --display-name "Python 2.7"    "
-    
+   
+RUN jupyter labextension install @lckr/jupyterlab_variableinspector
+   
 RUN julia -e 'import Pkg; Pkg.update()' && \
     julia -e 'import Pkg; Pkg.add("HDF5")' && \
     julia -e 'import Pkg; Pkg.add("GR")' && \
