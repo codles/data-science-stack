@@ -7,7 +7,9 @@ RUN apt-get update && \
     xz-utils \
     lsb && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-    
+
+RUN apt-get install -y vim glances 
+
 
 RUN ln -s /bin/tar /bin/gtar 
 
@@ -28,7 +30,7 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
     julia -e 'import Pkg; Pkg.add("RDatasets")' && \
     julia -e 'import Pkg; Pkg.add("DSP")' && \
     julia -e 'import Pkg; Pkg.add("BenchmarkTools")' && \
-    julia -e 'import Pkg; Pkg.add("PlotlyJS")' && \
+    # julia -e 'import Pkg; Pkg.add("PlotlyJS")' && \
     julia -e 'import Pkg; Pkg.add("SampledSignals")' && \
     julia -e 'import Pkg; Pkg.add("IJulia")' && \
     # Precompile Julia packages \
@@ -40,5 +42,5 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
     julia -e 'import Pkg; using DSP' && \
     julia -e 'import Pkg; using BenchmarkTools' && \
     julia -e 'import Pkg; using SampledSignals' && \
-    julia -e 'import Pkg; using PlotlyJS' && \
+    # julia -e 'import Pkg; using PlotlyJS' && \
     julia -e 'import Pkg; using IJulia'
