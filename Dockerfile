@@ -5,11 +5,10 @@ USER root
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     xz-utils \
+    vim \
+    glances \
     lsb && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-
-RUN apt-get install -y vim glances 
-
 
 RUN ln -s /bin/tar /bin/gtar 
 
